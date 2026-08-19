@@ -18,42 +18,45 @@ To implement univariate Linear Regression to fit a straight line using least squ
 
 ## Program:
 ```
+import matplotlib.pyplot as plt
+import numpy as np
 
-import
-numpy as np
-import
-matplotlib.pyplot as plt
-X 2, 3, 4, 51)
-Y 4, 5, 4, 51)
-= np.mean(x)
-x mean
-= np.mean(Y)
-Y_mean
-np. - x_mean) • (Y - y_mean))
-numerator
-denominator
-- x_mean) 2)
-m numerator/denominator
-b = y_mean - m • x_mean
-print("S10pe (m):" , m)
-print("lntercept (b):" ,
-b)
+X = np.array([1, 2, 3, 4, 5])
+Y = np.array([2, 4, 5, 4, 5])
+
+x_mean = np.mean(X)
+y_mean = np.mean(Y)
+
+numerator = np.sum((X - x_mean) * (Y - y_mean))
+denominator = np.sum((X - x_mean) ** 2)
+
+m = numerator / denominator
+b = y_mean - m * x_mean
+
+print("Slope (m):", m)
+print("Intercept (b):", b)
+
 Y_pred = m * X + b
-print("Va1ue:", Y_pred)
-x input("Enter value: "
-YY = m float(x) + b
-print("Va1ue:", yy)
-# Plotting
-pit. scatter(X, Y, label-"Data Points")
-plt.p10t(X, Y_pred, Fit Line")
-plt.xlabel( "X")
-plt .ylabel( "Y" )
-plt. legend ( )
-plt.title( "Univariate Linear Regression")
-plt. show()
+print("Value:", Y_pred)
 
+x = input("Enter value: ")
+yy = m * float(x) + b
+print("Value:", yy)
+
+# Plotting
+plt.scatter(X, Y, label="Data Points")
+plt.plot(X, Y_pred, label="Best Fit Line")
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.legend()
+plt.title("Univariate Linear Regression")
+plt.show()
+
+/*
+Program to implement Univariate Linear Regression
 Developed by: Selshiya F
-RegisterNumber: 212224060241
+RegisterNumber: 212224060241 
+*/
 
 ```
 
